@@ -1,6 +1,6 @@
 # linked-list
 
-Simple example usage of a linked list.
+Example of a linked list.
 
 ## Run
 
