@@ -53,6 +53,7 @@ public class Main {
                     System.out.println("Linked list reversed");
                     break;
                 case 'q':
+                    System.out.println("Quitting");
                     scanner.close();
                     System.exit(0);
                     break;
