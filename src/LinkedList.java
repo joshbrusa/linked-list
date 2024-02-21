@@ -15,7 +15,7 @@ class LinkedList {
 
     /**
      * Appends a node to the linked list. Loops over the nodes until a next is
-     * null.
+     * null. This is very efficient as we do not need to shift the list.
      */
     public void add(int data) {
         Node newNode = new Node(data);
@@ -36,7 +36,8 @@ class LinkedList {
     /**
      * Deletes a node at a given index. 2 pointers, one at current and one at
      * previous. If our current equals our desired node, then we just update
-     * the previous.next to be the current.next.
+     * the previous.next to be the current.next. This is very efficient as we
+     * do not need to shift the list.
      */
     public void delete(int index) {
         if (head == null) {
