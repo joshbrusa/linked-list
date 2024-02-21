@@ -129,7 +129,7 @@ class LinkedList {
 
         Node previous = null;
         Node current = head;
-        Node next = current.next;
+        Node next = null;
 
         while (current != null) {
             next = current.next;
