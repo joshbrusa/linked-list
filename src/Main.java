@@ -10,7 +10,7 @@ public class Main {
 
         while (true) {
             System.out.println("Enter command:");
-            System.out.println("(a)dd, (r)emove, (g)et, (p)rint, (l)ength, (q)uit");
+            System.out.println("(a)dd, (d)emove, (g)et, (p)rint, (l)ength, (r)everse, (q)uit");
             String input = scanner.nextLine();
 
             switch (input.charAt(0)) {
@@ -19,12 +19,14 @@ public class Main {
                     int dataToAdd = scanner.nextInt();
                     scanner.nextLine();
                     linkedList.add(dataToAdd);
+                    System.out.println("Added element");
                     break;
-                case 'r':
-                    System.out.println("Enter an index to remove:");
-                    int indexToRemove = scanner.nextInt();
+                case 'd':
+                    System.out.println("Enter an index to delete:");
+                    int indexToDelete = scanner.nextInt();
                     scanner.nextLine();
-                    linkedList.remove(indexToRemove);
+                    linkedList.delete(indexToDelete);
+                    System.out.println("Deleted element");
                     break;
                 case 'g':
                     System.out.println("Enter an index to get:");
@@ -45,6 +47,10 @@ public class Main {
                     int length = linkedList.length();
                     System.out.println("Length:");
                     System.out.println(length);
+                    break;
+                case 'r':
+                    linkedList.reverse();
+                    System.out.println("Linked list reversed");
                     break;
                 case 'q':
                     scanner.close();

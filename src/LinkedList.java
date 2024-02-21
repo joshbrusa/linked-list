@@ -34,11 +34,11 @@ class LinkedList {
     }
 
     /**
-     * Removes a node at a given index. 2 pointers, one at current and one at
+     * Deletes a node at a given index. 2 pointers, one at current and one at
      * previous. If our current equals our desired node, then we just update
      * the previous.next to be the current.next.
      */
-    public void remove(int index) {
+    public void delete(int index) {
         if (head == null) {
             throw new IndexOutOfBoundsException("List is empty");
         } else if (index == 0) {
@@ -111,5 +111,37 @@ class LinkedList {
             current = current.next;
         }
         return length;
+    }
+
+    /**
+     * Reverses the linked list. Uses 3 pointers, the previous, current, and
+     * next. At the start make the current the head. Then make the next the next
+     * node. Now set the pointer to the previous, starting as null. Then step
+     * the current and previous. Once current is null stop the loop to prevent
+     * out of bounds. At the very end set the head to previous as that will be
+     * the head node.
+     */
+    public void reverse() {
+        // if there is no head or next there is no need to reverse
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        Node previous = null;
+        Node current = head;
+        Node next = current.next;
+
+        while (current != null) {
+            next = current.next;
+
+            // set the next to the previous
+            current.next = previous;
+
+            // step the pointers
+            previous = current;
+            current = next;
+        }
+
+        head = previous;
     }
 }
